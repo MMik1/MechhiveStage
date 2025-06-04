@@ -10,6 +10,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [capVal, setCapVal] = useState(null);
+    const [showPassword, setShowPassword] = useState(false);
     const handleLogin = (e) => {
         e.preventDefault();
 
@@ -44,7 +45,7 @@ const Login = () => {
                 <div className="relative my-6">
                     <input
                         id="password"
-                        type="password"
+                        type={showPassword ? "text" : "password"}
                         placeholder=" "
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
@@ -56,7 +57,11 @@ const Login = () => {
                     >
                         Your Password
                     </label>
-                    <AiOutlineLock className="absolute top-4 right-0 text-white"/>
+                    <iconButton
+
+                        type="button"
+                        onClick={() => setShowPassword(prev => !prev)}
+                    ><AiOutlineLock className="absolute top-4 right-0 text-white"/></iconButton>
                 </div>
                 <div className="flex justify-between items-center text-white text-sm my-4">
                     <label className="flex items-center space-x-2">
