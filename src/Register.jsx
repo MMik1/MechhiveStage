@@ -60,10 +60,11 @@ const Register = () => {
                     >
                         Your Password
                     </label>
-                   <button
+                   <iconButton
+
                    type="button"
                    onClick={() => setShowPassword(prev => !prev)}
-                   ><AiOutlineLock className="absolute top-4 right-0 text-white"/>  </button>
+                   > <AiOutlineLock className="absolute top-4 right-0 text-white"/> </iconButton>
                 </div>
                 <div className="relative my-6">
                     <input
@@ -80,11 +81,15 @@ const Register = () => {
                     >
                         Comfirm Password
                     </label>
-                        <AiOutlineLock className="absolute top-4 right-0 text-white"/>
+                    <iconButton
+
+                        type="button"
+                        onClick={() => setShowPassword(prev => !prev)}
+                    ><AiOutlineLock className="absolute top-4 right-0 text-white"/></iconButton>
                 </div>
                 <button disabled={!capVal}
                         className="w-full mb-4 text-[18px] mt -6 rounded-full bg-white text-emerald-500 hover:bg-emerald-600 hover:text-white py-2 transition-colors duration-300"
-                    type="submit">Register
+                        type="submit">Register
                 </button>
                 <div className="text-center text-sm text-white mt-4">
                     Already Create an Account? <Link to="/Login" className="text-blue-400 hover:underline">Login</Link>
